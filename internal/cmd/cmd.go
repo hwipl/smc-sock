@@ -2,33 +2,28 @@ package cmd
 
 import "flag"
 
-// variable definitions
 var (
-	server  bool   = false
-	client  bool   = false
-	address string = "127.0.0.1"
-	port    int    = 50000
+	// command line arguments
+	server  = flag.Bool("s", false, "run server")
+	client  = flag.Bool("c", false, "run client")
+	address = flag.String("a", "127.0.0.1", "server/client address")
+	port    = flag.Int("p", 50000, "server/client port")
 )
 
 // Run is the main entry point of the program
 func Run() {
 	// parse command line arguments
-	flag.BoolVar(&server, "s", server, "run server")
-	flag.BoolVar(&client, "c", client, "run client")
-	flag.StringVar(&address, "a", address, "server/client address")
-	flag.IntVar(&port, "p", port, "server/client port")
-
 	flag.Parse()
 
 	// run server
-	if server {
-		RunServer(address, port)
+	if *server {
+		RunServer(*address, *port)
 		return
 	}
 
 	// run client
-	if client {
-		RunClient(address, port)
+	if *client {
+		RunClient(*address, *port)
 		return
 	}
 
