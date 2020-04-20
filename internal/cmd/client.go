@@ -19,7 +19,7 @@ func RunClient(address string, port int) {
 	fmt.Printf("Connected to server\n")
 
 	// sent text, read reply an
-	text := "Hello, world\n"
+	text := *text + "\n"
 	fmt.Fprintf(conn, text)
 	fmt.Printf("Sent %d bytes to server: %s", len(text), text)
 	reply, err := bufio.NewReader(conn).ReadString('\n')
