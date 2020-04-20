@@ -31,4 +31,6 @@ func Run() {
 		RunClient(address, port)
 		return
 	}
+
+	flag.Usage()
 }
