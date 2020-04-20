@@ -1,12 +1,8 @@
 package main
 
 import (
-	"bufio"
 	"flag"
-	"fmt"
-	"log"
 
-	"github.com/hwipl/smc-go/pkg/socket"
 	"github.com/hwipl/smc-sock/internal/cmd"
 )
 
@@ -17,27 +13,6 @@ var (
 	address string = "127.0.0.1"
 	port    int    = 50000
 )
-
-// run as a client
-func runClient(address string, port int) {
-	// connect via smc
-	conn, err := socket.Dial(address, port)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer conn.Close()
-	fmt.Printf("Connected to server\n")
-
-	// sent text, read reply an
-	text := "Hello, world\n"
-	fmt.Fprintf(conn, text)
-	fmt.Printf("Sent %d bytes to server: %s", len(text), text)
-	reply, err := bufio.NewReader(conn).ReadString('\n')
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Printf("Read %d bytes from server: %s", len(reply), reply)
-}
 
 func main() {
 	// parse command line arguments
@@ -56,7 +31,7 @@ func main() {
 
 	// run client
 	if client {
-		runClient(address, port)
+		cmd.RunClient(address, port)
 		return
 	}
 }
