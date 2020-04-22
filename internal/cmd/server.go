@@ -9,15 +9,19 @@ import (
 	"github.com/hwipl/smc-go/pkg/socket"
 )
 
-// RunServer runs the program as a server
-func RunServer(address string, port int) {
+// prepareServer prepares the listener for the server
+func prepareServer(address string, port int) net.Listener {
 	// listen for smc connections
 	l, err := socket.Listen(address, port)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer l.Close()
+	return l
+}
 
+// runServerLoop runs the endless server loop
+func runServerLoop(l net.Listener) {
+	defer l.Close()
 	// accept new connections from listener and handle them
 	for {
 		// accept new connection
@@ -37,4 +41,10 @@ func RunServer(address string, port int) {
 			c.Close()
 		}(conn)
 	}
+}
+
+// RunServer runs the program as a server
+func RunServer(address string, port int) {
+	l := prepareServer(address, port)
+	runServerLoop(l)
 }
