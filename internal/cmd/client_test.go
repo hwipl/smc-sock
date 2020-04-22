@@ -18,5 +18,9 @@ func TestRunClient(t *testing.T) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	RunClient(addr[0], port)
+	want := "Hello, world!\n"
+	got := RunClient(addr[0], port)
+	if got != want {
+		t.Errorf("got = %s; want %s", got, want)
+	}
 }
