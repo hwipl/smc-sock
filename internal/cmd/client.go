@@ -9,7 +9,7 @@ import (
 )
 
 // RunClient runs the program as a client
-func RunClient(address string, port int) {
+func RunClient(address string, port int) string {
 	// connect via smc
 	conn, err := socket.Dial(address, port)
 	if err != nil {
@@ -27,4 +27,5 @@ func RunClient(address string, port int) {
 		log.Fatal(err)
 	}
 	fmt.Printf("Read %d bytes from server: %s", len(reply), reply)
+	return reply
 }
