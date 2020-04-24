@@ -10,9 +10,10 @@ import (
 )
 
 // prepareServer prepares the listener for the server
-func prepareServer(address string, port int) net.Listener {
+func prepareServer(host string, port int) net.Listener {
 	// listen for smc connections
-	l, err := socket.Listen(address, port)
+	address := fmt.Sprintf("%s:%d", host, port)
+	l, err := socket.Listen(address)
 	if err != nil {
 		log.Fatal(err)
 	}
