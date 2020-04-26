@@ -6,8 +6,7 @@ var (
 	// command line arguments
 	server  = flag.Bool("s", false, "run server")
 	client  = flag.Bool("c", false, "run client")
-	address = flag.String("a", "127.0.0.1", "server/client address")
-	port    = flag.Int("p", 50000, "server/client port")
+	address = flag.String("a", "127.0.0.1:50000", "server/client address")
 	text    = flag.String("t", "Hello, world!", "text to transfer")
 )
 
@@ -18,13 +17,13 @@ func Run() {
 
 	// run server
 	if *server {
-		RunServer(*address, *port)
+		RunServer(*address)
 		return
 	}
 
 	// run client
 	if *client {
-		RunClient(*address, *port)
+		RunClient(*address)
 		return
 	}
 

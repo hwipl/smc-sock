@@ -9,9 +9,8 @@ import (
 )
 
 // RunClient runs the program as a client
-func RunClient(host string, port int) string {
+func RunClient(address string) string {
 	// connect via smc
-	address := fmt.Sprintf("%s:%d", host, port)
 	conn, err := socket.Dial(address)
 	if err != nil {
 		log.Fatal(err)
