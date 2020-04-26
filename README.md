@@ -12,12 +12,11 @@ connection, reads the message from the client and returns it to the client.
 You can run `smc-sock` with the following command line arguments:
 
 ```
-  -a string
-        server/client address (default "127.0.0.1")
-  -c    run client
-  -p int
-        server/client port (default 50000)
-  -s    run server
-  -t string
-        text to transfer (default "Hello, world!")
+  -a address
+        listen on (server) or connect to (client) address (default
+        "127.0.0.1:50000")
+  -c    run as client
+  -s    run as server
+  -t text
+        transfer text (default "Hello, world!")
 ```
