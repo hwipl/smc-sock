@@ -1,4 +1,4 @@
-github.com/hwipl/smc-go v0.0.0-20231018074847-5ce955879157 h1:Kw/9pKTyqJrVxvxJe5Nk4J8V5yrjlV1zsXjNQlO2cCg=
-github.com/hwipl/smc-go v0.0.0-20231018074847-5ce955879157/go.mod h1:Zb9ygmxCGF3pW9Q2GC/Zlju64ne/hibdIqXjw0LoEa8=
-golang.org/x/sys v0.13.0 h1:Af8nKPmuFypiUBjVoU9V20FiaFXOcuZI21p0ycVYYGE=
-golang.org/x/sys v0.13.0/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
+github.com/hwipl/smc-go v0.0.0-20240428182659-7dc335f42089 h1:c6fbkjMy8vVjQ3zUh0KAy4mRnhZVhfnx/mEL3EaOR64=
+github.com/hwipl/smc-go v0.0.0-20240428182659-7dc335f42089/go.mod h1:fppQKpNk/g9TKvNjxM+mW/44f5y+Ix5G2h7rXDCl+qM=
+golang.org/x/sys v0.19.0 h1:q5f1RH2jigJ1MoAWp2KTp3gm5zAGFUTarQZ5U386+4o=
+golang.org/x/sys v0.19.0/go.mod h1:/VUhepiaJMQUp4+oa/7Zr1D23ma6VTLIYjOOTFZPUcA=
