@@ -1,6 +1,6 @@
 module github.com/hwipl/smc-sock
 
-go 1.18
+go 1.22
 
 require github.com/hwipl/smc-go v0.0.0-20231018074847-5ce955879157
 
